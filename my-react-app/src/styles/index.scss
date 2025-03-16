@@ -1,0 +1,36 @@
+// @import "variables"
+// @import "./variables";
+@import "../styles/variables";
+
+
+// .btn-primary {
+//   background-color: $primary;
+//   color: $white;
+//   border: 1px solid darken($primary, 10%);
+// }
+$btn-types: (
+  primary: $primary,
+  default: $secondary,
+  danger: $danger,
+  success: $success,
+  warning: $warning,
+  info: $info
+);
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+@each $name, $color in $btn-types {
+  .btn-#{$name} {
+    background-color: $color;
+    color: $white;
+    border: 1px solid darken($color, 10%);
+  }
+}
